@@ -48,6 +48,13 @@ router.put("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   try {
+    const todos = await Todo.findAll({
+      where: {
+        id: +req.params.id
+      }
+    });
+    await todos[0].destroy();
+    res.status(204).json({})
   } catch (err) {
     console.log("routes/todo-delete", err);
     res.status(500).json({
