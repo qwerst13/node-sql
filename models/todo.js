@@ -15,11 +15,7 @@ const todo = sequelize.define("todo", {
   title: {
     type: Sequelize.STRING,
     allowNull: false,
-  },
-  date: {
-    type: Sequelize.DATE,
-    allowNull: false,
-  },
+  }
 });
 
 module.exports = todo;
